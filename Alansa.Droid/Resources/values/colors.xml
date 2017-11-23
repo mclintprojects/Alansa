@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toolbar">#52abca</color>
+    <color name="secondaryText">#D9FFFFFF</color>
+    <color name="secondaryTextLight">#8CFFFFFF</color>
+    <color name="primaryText">#D9000000</color>
+    <color name="primaryTextLight">#8C000000</color>
+    <color name="windowBg">#EEEEEE</color>
+    <color name="white">#ffffff</color>
+    <color name="whiteSecondary">#E5E5E5</color>
+    <color name="hint">#0490CC</color>
+</resources>

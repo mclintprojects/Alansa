@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace AlansaDroid.Collections
+namespace Alansa.Droid.Collections
 {
     public class ObservableCollection<T> : System.Collections.ObjectModel.ObservableCollection<T>
     {

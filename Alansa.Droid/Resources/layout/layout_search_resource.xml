@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/resourceTIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/queryTb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/clearBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:srcCompat="@drawable/notification_clear_all"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="8dp"
+            android:visibility="gone"/>
+      
+    </FrameLayout>
+
+</LinearLayout>
