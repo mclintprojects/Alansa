@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Alansa.Droid</id>
+    <version>1.0.0</version>
+    <title>$title$</title>
+    <authors>Alansa.Droid</authors>
+    <owners>Mbah Clinton</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A collection of handy classes I use in every freelance Xamarin.Android project now easily accessible in one place.</description>
+    <releaseNotes>Initial commit</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Android Xamarin.Android C# Helper</tags>
+  </metadata>
+</package>
