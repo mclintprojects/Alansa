@@ -1,5 +1,4 @@
-﻿using Alansa.Droid.Adapters;
-using Alansa.Droid.Collections;
+﻿using Alansa.Droid.Collections;
 using Alansa.Droid.Extensions;
 using Alansa.Droid.Interfaces;
 using Android.Support.V7.Widget;

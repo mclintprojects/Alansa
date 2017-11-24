@@ -1,5 +1,8 @@
-﻿using Android.Content;
+﻿using Alansa.Droid.Dialogs;
+using Alansa.Droid.Interfaces;
+using Android.Content;
 using Android.Graphics;
+using Android.Support.Design.Widget;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -78,19 +81,18 @@ namespace Alansa.Droid.Views
         /// Sets up the ResourceSearchView
         /// </summary>
         /// <typeparam name="T">The type of the resource being search eg. People, Income etc</typeparam>
-        /// <param name="dbPath">The path to the offline version of the resource to be used to populate the list incase the app is offline</param>
         /// <param name="searchHandler">The handler that when invoked returns the data to populate the list with</param>
         /// <param name="OnEmpty">The method to call when the list is empty</param>
-        public virtual void SetupSearch<T>(string dbPath, Func<string, Task<IEnumerable<ISearchable>>> searchHandler, Action OnEmpty, int emptyStateIconResId = 0) where T : ISearchableOffline, new()
+        public virtual void SetupSearch<T>(Func<string, Task<IEnumerable<ISearchable>>> searchHandler, Action OnEmpty, int emptyStateIconResId = 0) where T : new()
         {
-            queryBar.Click += (s, e) => ShowSearchDialog<T>(dbPath, searchHandler, OnEmpty, emptyStateIconResId);
-            resourceTIL.Click += (s, e) => ShowSearchDialog<T>(dbPath, searchHandler, OnEmpty, emptyStateIconResId);
+            queryBar.Click += (s, e) => ShowSearchDialog(searchHandler, OnEmpty, emptyStateIconResId);
+            resourceTIL.Click += (s, e) => ShowSearchDialog(searchHandler, OnEmpty, emptyStateIconResId);
 
             queryBar.FocusChange += (s, e) =>
             {
                 if (e.HasFocus)
                 {
-                    ShowSearchDialog<T>(dbPath, searchHandler, OnEmpty, emptyStateIconResId);
+                    ShowSearchDialog(searchHandler, OnEmpty, emptyStateIconResId);
                     clearBtn.SetColorFilter(Color.Black, PorterDuff.Mode.SrcAtop);
                     clearBtn.Visibility = ViewStates.Visible;
                 }
@@ -102,10 +104,9 @@ namespace Alansa.Droid.Views
             };
         }
 
-        protected virtual void ShowSearchDialog<T>(string dbPath, Func<string, Task<IEnumerable<ISearchable>>> searchHandler, Action OnEmpty, int emptyStateIconResId) where T : ISearchableOffline, new()
+        protected virtual void ShowSearchDialog(Func<string, Task<IEnumerable<ISearchable>>> searchHandler, Action OnEmpty, int emptyStateIconResId)
         {
-            var dialog = new SearchResourceDialog<T>(dbPath, searchHandler, OnEmpty, ref OnDatumSelected, emptyStateIconResId, objId ?? 0);
-            dialog.HasCustomOfflineSearchHandler = SetupDialogWithCustomSearchHandler;
+            var dialog = new SearchResourceDialog(searchHandler, OnEmpty, ref OnDatumSelected, emptyStateIconResId, objId ?? 0);
 
             dialog.OnDialogDismiss += (primaryText) => queryBar.Text = primaryText;
 
@@ -114,14 +115,18 @@ namespace Alansa.Droid.Views
             dialog.Show(App.CurrentActivity.FragmentManager, string.Empty);
         }
 
-        public void SetDialogHint(ResourceType type) => dialogHint = $"Search for {type.ToString().ToLower()}";
+        /// <summary>
+        /// Sets the hint of the search entry to "Search for <paramref name="whatUserWillBeSearchingFor"/>"
+        /// </summary>
+        /// <param name="whatUserWillBeSearchingFor">Name of the item the user will be searching for. eg. Location etc</param>
+        public void SetDialogHint(string whatUserWillBeSearchingFor) => dialogHint = $"Search for {whatUserWillBeSearchingFor.ToLower()}";
 
         private string GetHint(Context ctx, IAttributeSet attrs)
         {
             if (attrs != null)
             {
                 var array = ctx.ObtainStyledAttributes(attrs, Resource.Styleable.ResourceSearchView, 0, 0);
-                var hint = array.GetString(Resource.Styleable.ResourceSearchView_hint);
+                var hint = array.GetString(Resource.Styleable.ResourceSearchView_searchViewHint);
 
                 array.Recycle();
                 return hint;

@@ -11,13 +11,13 @@ using System.Collections.Generic;
 
 namespace Alansa.Droid.Adapters
 {
-    internal class IDoubleItemWithAviAdapter<T> : SmartAdapter<T> where T : IDoubleItemWithAvi
+    internal class DoubleItemWithAviAdapter<T> : SmartAdapter<T> where T : IDoubleItemWithAvi
     {
         private readonly ObservableCollection<T> items;
         public Action<GenericViewHolder> OnMoreClicked;
         private readonly bool showMoreVert;
 
-        public IDoubleItemWithAviAdapter(ObservableCollection<T> items, RecyclerView recyclerView, bool showMoreVert = true) : base(items, recyclerView, layoutId)
+        public DoubleItemWithAviAdapter(ObservableCollection<T> items, RecyclerView recyclerView, bool showMoreVert = true) : base(items, recyclerView, Resource.Layout.row_doubleitem_avi)
         {
             this.items = items;
             this.showMoreVert = showMoreVert;
@@ -65,7 +65,7 @@ namespace Alansa.Droid.Adapters
             if (tempItems != null)
             {
                 items.Clear();
-                if (query != "")
+                if (query != string.Empty)
                     items.AddRange(tempItems.FindAll(x => x.GetPrimaryText().Contains(query, true)));
                 else
                     items.AddRange(tempItems);

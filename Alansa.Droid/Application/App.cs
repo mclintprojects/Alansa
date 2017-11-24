@@ -14,8 +14,7 @@ namespace Alansa.Droid
     /// <summary>
     /// The base app class. This class comes with a lot of handy functionality. It is ideal that you inherit from it.
     /// </summary>
-    [Application]
-    public class App : MultiDexApplication, IActivityLifecycleCallbacks
+    public class App : Application, IActivityLifecycleCallbacks
     {
         private static Activity _currentActivity;
         public static Activity CurrentActivity => _currentActivity;

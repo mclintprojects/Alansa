@@ -1,4 +1,4 @@
-﻿namespace GhalaniDroid.Interfaces
+﻿namespace Alansa.Droid.Interfaces
 {
     /// <summary>
     /// For use in the sub item list with datum like income source, expense types etc.

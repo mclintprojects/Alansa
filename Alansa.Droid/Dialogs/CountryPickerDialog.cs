@@ -1,18 +1,17 @@
 ﻿using Alansa.Droid.Adapters;
 using Alansa.Droid.Collections;
+using Alansa.Droid.Extensions;
 using Alansa.Droid.Interfaces;
 using Android.App;
 using Android.OS;
 using Android.Support.V7.Widget;
+using Android.Text;
 using Android.Views;
 using Android.Widget;
-using GhalaniDroid.Adapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
-using Android.Text;
-using Alansa.Droid.Extensions;
 
 namespace Alansa.Droid.Dialogs
 {

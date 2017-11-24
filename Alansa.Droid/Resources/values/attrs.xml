@@ -4,10 +4,6 @@
         <attr name="searchViewHint" format="string" />
     </declare-styleable>
 
-    <declare-styleable name="Datepicker">
-        <attr name="datePickerHint" format="string" />
-    </declare-styleable>
-
     <declare-styleable name="Chip">
         <attr name="chipText" format="string" />
         <attr name="chipColor" format="color" />

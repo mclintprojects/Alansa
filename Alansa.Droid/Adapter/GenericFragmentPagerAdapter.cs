@@ -1,7 +1,7 @@
 ﻿using Android.Support.V4.App;
 using System.Collections.Generic;
 
-namespace GhalaniDroid.Adapters
+namespace Alansa.Droid.Adapters
 {
     internal class GenericFragmentPagerAdapter : FragmentPagerAdapter
     {

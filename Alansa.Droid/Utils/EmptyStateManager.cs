@@ -12,7 +12,7 @@ namespace Alansa.Droid.Utils
         /// <param name="emptyState">The emptyState view</param>
         /// <param name="iconResId">The resource id for the icon to be used in the empty state. It should be a vector drawable</param>
         /// <param name="emptyStateText">The text to set for the empty state</param>
-        public static void SetEmptyStateV2(View emptyState, int iconResId, string emptyStateText)
+        public static void SetEmptyState(View emptyState, int iconResId, string emptyStateText)
         {
             var iconHolder = emptyState.FindViewById<ImageView>(Resource.Id.emptyIcon);
             var emptyStateTextLbl = emptyState.FindViewById<TextView>(Resource.Id.infoText);
