@@ -98,12 +98,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\BaseActivity.cs" />
-    <Compile Include="Adapter\DoubleItemAdapter.cs" />
-    <Compile Include="Adapter\GenericFragmentPagerAdapter.cs" />
-    <Compile Include="Adapter\GenericViewHolder.cs" />
-    <Compile Include="Adapter\IDoubleItemWithAviAdapter.cs" />
-    <Compile Include="Adapter\SearchAdapter.cs" />
-    <Compile Include="Adapter\SmartAdapter.cs" />
+    <Compile Include="Adapters\ChipAdapter.cs" />
+    <Compile Include="Adapters\DoubleItemAdapter.cs" />
+    <Compile Include="Adapters\GenericFragmentPagerAdapter.cs" />
+    <Compile Include="Adapters\GenericViewHolder.cs" />
+    <Compile Include="Adapters\IDoubleItemWithAviAdapter.cs" />
+    <Compile Include="Adapters\SearchAdapter.cs" />
+    <Compile Include="Adapters\SmartAdapter.cs" />
     <Compile Include="Application\App.cs" />
     <Compile Include="Animation\AnimHelper.cs" />
     <Compile Include="Dialogs\CountryPickerDialog.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Chip.cs" />
+    <Compile Include="Views\ChipListView.cs" />
+    <Compile Include="Views\Datepicker.cs" />
     <Compile Include="Views\PhoneCodePicker.cs" />
     <Compile Include="Views\ResourceSearchView.cs" />
   </ItemGroup>
@@ -995,6 +998,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_chip.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_chip_listview.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\chip_list_item.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_close_black_24dp.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_datepicker.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -17,4 +17,11 @@
   <declare-styleable name="Datepicker">
     <attr name="picker_hint" format="string" />
   </declare-styleable>
+
+  <declare-styleable name="ChipListView">
+    <attr name="reverseChipLayout" format="boolean" />
+    <attr name="usesRandomBackgroundColor" format="boolean" />
+    <attr name="emptyStateText" format="string" />
+    <attr name="hideRemoveChipBtn" format="boolean" />
+  </declare-styleable>
 </resources>

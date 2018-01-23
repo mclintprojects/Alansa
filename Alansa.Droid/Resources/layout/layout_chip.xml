@@ -21,7 +21,7 @@
         android:id="@+id/chipRemoveBtn"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        app:srcCompat="@mipmap/ic_clear_black_24dp"
+        app:srcCompat="@drawable/ic_close_black_24dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="4dp"/>
 

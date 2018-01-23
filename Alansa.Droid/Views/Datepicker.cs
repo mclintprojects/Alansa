@@ -1,4 +1,7 @@
-﻿using Android.App;
+﻿using Alansa.Droid.Enums;
+using Alansa.Droid.Extensions;
+using Alansa.Droid.Utils;
+using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -18,13 +21,13 @@ namespace Alansa.Droid.Views
 
         public string Text
         {
-            get => selectedDate.ToBackendDateString();
+            get => GetDateString(selectedDate);
             set
             {
                 try
                 {
                     // Normally the text set to would be in the format Jan, 12 2017. The code below changes that string to a datetime object
-                    selectedDate = value.ToDateTime(DateFormat.MMMDDYYYY);
+                    selectedDate = ConvertToDateTime(value, DateFormat.MMMDDYYYY);
                     dateTb.Text = value;
                 }
                 catch
@@ -111,11 +114,37 @@ namespace Alansa.Droid.Views
 
             var dateDialog = new DatePickerDialog(ctx, (sender, e) =>
             {
-                dateTb.Text = e.Date.ToShortDate();
+                dateTb.Text = GetDateString(e.Date);
                 selectedDate = e.Date;
                 OnDateSelected?.Invoke();
             }, date.Year, date.Month - 1, date.Day);
             dateDialog.Show();
+        }
+
+        private string GetDateString(DateTime time) => $"{time.Year}-{time.Month}-{time.Day}";
+
+        private DateTime ConvertToDateTime(string value, DateFormat dateFormat = DateFormat.YYYYMMDD, char delimiter = '-')
+        {
+            if (value != null && value.Length >= 8)
+            {
+                int[] splitDate;
+                switch (dateFormat)
+                {
+                    case DateFormat.YYYYMMDD:
+                        var splitString = value.Split(new[] { delimiter }, StringSplitOptions.RemoveEmptyEntries);
+                        splitDate = splitString.ToIntArray();
+                        return new DateTime(splitDate[0], splitDate[1], splitDate[2]);
+
+                    case DateFormat.MMMDDYYYY:
+                        var dateSplit = value.Replace(",", string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        return new DateTime(int.Parse(dateSplit[2]), BetterDate.GetNumberOfShortMonth(dateSplit[0]), int.Parse(dateSplit[1]));
+
+                    default:
+                        return new DateTime();
+                }
+            }
+
+            return DateTime.Now;
         }
     }
 }
