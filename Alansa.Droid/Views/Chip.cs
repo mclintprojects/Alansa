@@ -8,7 +8,7 @@ using System;
 
 namespace Alansa.Droid.Views
 {
-    internal class Chip : TextView
+    public class Chip : TextView
     {
         public Chip(Context context) : base(context)
         {

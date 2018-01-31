@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Alansa.Droid.Adapters
 {
-    internal class SearchAdapter<T> : SmartAdapter<T> where T : ISearchable
+    public class SearchAdapter<T> : SmartAdapter<T> where T : ISearchable
     {
         private ObservableCollection<T> items;
 

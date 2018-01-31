@@ -9,7 +9,7 @@ namespace Alansa.Droid.Utils
     /// <summary>
     /// Util that simplifies validating entry fields
     /// </summary>
-    internal class Validator : IDisposable
+    public class Validator : IDisposable
     {
         private bool passed = true, alreadyFailed;
         public bool PassedValidation => passed;

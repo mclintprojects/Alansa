@@ -125,7 +125,7 @@ namespace Alansa.Droid.Adapters
         /// Subscribes to view click so that we can have ItemSelected w/o any custom code
         /// </summary>
         /// <seealso cref="Android.Support.V7.Widget.RecyclerView.Adapter" />
-        internal class AttachStateChangeListener : Object, RecyclerView.IOnChildAttachStateChangeListener
+        public class AttachStateChangeListener : Object, RecyclerView.IOnChildAttachStateChangeListener
         {
             private readonly SmartAdapter<T> parentAdapter;
 

@@ -16,7 +16,7 @@ using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace Alansa.Droid.Dialogs
 {
-    internal class SearchResourceDialog : DialogFragment
+    public class SearchResourceDialog : DialogFragment
     {
         protected RecyclerView recycler;
         protected ProgressBar loadingCircle;

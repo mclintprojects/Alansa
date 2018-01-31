@@ -11,7 +11,7 @@ using Alansa.Droid.Collections;
 
 namespace Alansa.Droid.Views
 {
-    internal class ChipListView : LinearLayout
+    public class ChipListView : LinearLayout
     {
         private readonly ObservableCollection<string> chips = new ObservableCollection<string>();
         private RecyclerView recycler;

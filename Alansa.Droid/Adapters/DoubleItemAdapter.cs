@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Alansa.Droid.Adapters
 {
-    internal class DoubleItemAdapter<T> : SmartAdapter<T> where T : IDoubleItem
+    public class DoubleItemAdapter<T> : SmartAdapter<T> where T : IDoubleItem
     {
         private readonly ObservableCollection<T> items;
         private readonly bool showDeleteBtn;

@@ -12,7 +12,7 @@ using System;
 
 namespace Alansa.Droid.Views
 {
-    internal class Datepicker : LinearLayout
+    public class Datepicker : LinearLayout
     {
         private EditText dateTb;
         private TextInputLayout dateInputLayout;

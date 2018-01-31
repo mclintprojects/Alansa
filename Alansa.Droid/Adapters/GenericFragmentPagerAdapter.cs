@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Alansa.Droid.Adapters
 {
-    internal class GenericFragmentPagerAdapter : FragmentPagerAdapter
+    public class GenericFragmentPagerAdapter : FragmentPagerAdapter
     {
         private readonly List<Fragment> fragments;
         private readonly string[] titles;

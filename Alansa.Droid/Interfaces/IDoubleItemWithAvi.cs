@@ -1,6 +1,6 @@
 ﻿namespace Alansa.Droid.Interfaces
 {
-    internal interface IDoubleItemWithAvi
+    public interface IDoubleItemWithAvi
     {
         string GetPrimaryText();
 

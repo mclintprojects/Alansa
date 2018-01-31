@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Alansa.Droid.Utils
 {
-    internal class ColorManager
+    public class ColorManager
     {
         private static bool IsColorsAlreadySet;
         private static int count;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Alansa.Droid.Models
 {
-    internal class Country : ISearchable
+    public class Country : ISearchable
     {
         public string alpha2 { get; set; }
         public string alpha3 { get; set; }

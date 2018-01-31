@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Alansa.Droid.Adapters
 {
-    internal class DoubleItemWithAviAdapter<T> : SmartAdapter<T> where T : IDoubleItemWithAvi
+    public class DoubleItemWithAviAdapter<T> : SmartAdapter<T> where T : IDoubleItemWithAvi
     {
         private readonly ObservableCollection<T> items;
         public Action<GenericViewHolder> OnMoreClicked;

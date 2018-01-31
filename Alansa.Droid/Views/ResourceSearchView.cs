@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Alansa.Droid.Views
 {
-    internal class ResourceSearchView : LinearLayout
+    public class ResourceSearchView : LinearLayout
     {
         protected EditText queryBar;
         protected ImageView clearBtn;

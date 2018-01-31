@@ -15,7 +15,7 @@ using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace Alansa.Droid.Dialogs
 {
-    internal class CountryPickerDialog : DialogFragment
+    public class CountryPickerDialog : DialogFragment
     {
         private readonly ObservableCollection<ISearchable> countriesCollection;
         private RecyclerView recycler;

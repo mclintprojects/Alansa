@@ -17,7 +17,7 @@ using System.Linq;
 
 namespace Alansa.Droid.Views
 {
-    internal class PhoneCodePicker : LinearLayout
+    public class PhoneCodePicker : LinearLayout
     {
         private TextView countryLbl;
         private EditText phoneNumberTb;
