@@ -9,9 +9,9 @@ namespace Alansa.Droid.Utils
         private readonly ISharedPreferences prefs;
         private readonly ISharedPreferencesEditor editor;
 
-        private PreferenceManager _instance;
+        private static PreferenceManager _instance;
 
-        public PreferenceManager Instance
+        public static PreferenceManager Instance
         {
             get
             {
