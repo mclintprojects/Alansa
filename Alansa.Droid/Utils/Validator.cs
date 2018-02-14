@@ -92,7 +92,7 @@ namespace Alansa.Droid.Utils
         /// </summary>
         /// <param name="passwordTb"></param>
         /// <param name="retypePasswordTb"></param>
-        internal void ValidateIsSame(EditText passwordTb, EditText retypePasswordTb)
+        public void ValidateIsSame(EditText passwordTb, EditText retypePasswordTb)
         {
             if (!alreadyFailed)
             {
@@ -111,7 +111,7 @@ namespace Alansa.Droid.Utils
         /// Validates if the text in the entry field is a valid email address
         /// </summary>
         /// <param name="editText"></param>
-        internal void ValidateEmail(EditText editText)
+        public void ValidateEmail(EditText editText)
         {
             if (!alreadyFailed)
             {

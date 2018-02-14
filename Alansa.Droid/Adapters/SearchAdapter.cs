@@ -40,7 +40,7 @@ namespace Alansa.Droid.Adapters
             }
         }
 
-        internal void ShowSearchResults(IEnumerable<T> collection, string query)
+        public void ShowSearchResults(IEnumerable<T> collection, string query)
         {
             if (collection != null)
             {

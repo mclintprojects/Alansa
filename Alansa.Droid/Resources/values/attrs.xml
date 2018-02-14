@@ -9,11 +9,6 @@
         <attr name="chipColor" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="PhoneCodePicker">
-        <attr name="phonePickerHint" format="string" />
-        <attr name="phonePickerDefaultCountry" format="string" />
-    </declare-styleable>
-
   <declare-styleable name="Datepicker">
     <attr name="picker_hint" format="string" />
   </declare-styleable>
@@ -23,5 +18,13 @@
     <attr name="usesRandomBackgroundColor" format="boolean" />
     <attr name="emptyStateText" format="string" />
     <attr name="hideRemoveChipBtn" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="IconView">
+    <attr name="bg_color" format="color" />
+    <attr name="src" format="integer" />
+    <attr name="showIconLabel" format="boolean" />
+    <attr name="iconLabelTextColor" format="color" />
+    <attr name="iconLabelText" format="string" />
   </declare-styleable>
 </resources>

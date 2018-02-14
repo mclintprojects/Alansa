@@ -92,7 +92,7 @@ namespace Alansa.Droid.Dialogs
             loadingCircle.Visibility = ViewStates.Gone;
         }
 
-        internal void SetEmptyStateText(string emptyStateText) => this.emptyStateText = emptyStateText;
+        public void SetEmptyStateText(string emptyStateText) => this.emptyStateText = emptyStateText;
 
         public void SetSelectedItem()
         {

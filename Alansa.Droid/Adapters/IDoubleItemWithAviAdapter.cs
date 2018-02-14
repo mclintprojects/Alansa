@@ -52,7 +52,7 @@ namespace Alansa.Droid.Adapters
             holder.GetView<TextView>("Description").Text = datum.GetSecondaryText();
         }
 
-        internal void DisplayServerSearchResults(List<T> tempItems)
+        public void DisplayServerSearchResults(List<T> tempItems)
         {
             if (tempItems == null)
                 items.Clear();
@@ -60,7 +60,7 @@ namespace Alansa.Droid.Adapters
                 items.AddRange(tempItems);
         }
 
-        internal void ShowSearchResults(string query, List<T> tempItems)
+        public void ShowSearchResults(string query, List<T> tempItems)
         {
             if (tempItems != null)
             {

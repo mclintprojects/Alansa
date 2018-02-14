@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>Alansa.Droid</id>
-    <version>1.0.5</version>
+    <version>1.0.7</version>
     <title>Alansa.Droid</title>
     <authors>Mbah Clinton</authors>
     <owners>Mbah Clinton</owners>
     <projectUrl>https://github.com/mclintprojects/Alansa/tree/master/Alansa.Droid</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of handy classes I use in every freelance Xamarin.Android project now easily accessible in one place.</description>
-    <releaseNotes>Made preference manager a singleton.</releaseNotes>
+    <releaseNotes>Bug fixes and stability improvements.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Android Xamarin.Android C# Helper</tags>
   </metadata>

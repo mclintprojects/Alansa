@@ -38,23 +38,18 @@ namespace Alansa.Droid
         {
         }
 
-        private static async Task<bool> IsHostReachable()
-        {
-            try
-            {
-                var client = new HttpClient { Timeout = TimeSpan.FromMilliseconds(2500) };
-                var response = await client.GetAsync("http://www.google.com");
-                return response.IsSuccessStatusCode;
-            }
-            catch { return false; }
-        }
-
         public static float ConvertPixelsToDp(float px)
         {
             var metrics = _currentActivity.Resources.DisplayMetrics;
             float dp = px / ((float)metrics.DensityDpi / (float)DisplayMetricsDensity.Default);
             return dp;
         }
+
+        /// <summary>
+        /// Invokes an action on the UI thread.
+        /// </summary>
+        /// <param name="action">The delegate to be invoked.</param>
+        public static void Post(Action action) => _currentActivity.RunOnUiThread(() => action.Invoke());
 
         public override void OnTerminate()
         {
@@ -93,26 +88,21 @@ namespace Alansa.Droid
         {
         }
 
-        /// <summary>
-        /// Invokes an action on the UI thread.
-        /// </summary>
-        /// <param name="action">The delegate to be invoked.</param>
-        public static void Post(Action action) => _currentActivity.RunOnUiThread(() => action.Invoke());
-
-        /// <summary>
-        /// Starts an activity with push left in animation
-        /// </summary>
-        /// <param name="intent">The intent for the activity to start</param>
-        public static new void StartActivity(Intent intent)
-        {
-            CurrentActivity.StartActivity(intent);
-            CurrentActivity.OverridePendingTransition(Resource.Animation.push_left_in, Resource.Animation.push_left_out);
-        }
-
         public override async void OnCreate()
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
+        }
+
+        private static async Task<bool> IsHostReachable()
+        {
+            try
+            {
+                var client = new HttpClient { Timeout = TimeSpan.FromMilliseconds(2500) };
+                var response = await client.GetAsync("http://www.google.com");
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
         }
     }
 }

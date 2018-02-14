@@ -2,7 +2,7 @@
 
 namespace Alansa.Droid.Extensions
 {
-    internal static class JsonExtensions
+    public static class JsonExtensions
     {
         /// <summary>
         /// Deserialize a string to typeof(T)

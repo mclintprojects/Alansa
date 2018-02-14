@@ -4,7 +4,7 @@ using Android.Widget;
 
 namespace Alansa.Droid.Utils
 {
-    internal static class EmptyStateManager
+    public static class EmptyStateManager
     {
         /// <summary>
         /// Use when emptystate view is inflated from empty_state_2.xml in the app's layout resources folder
